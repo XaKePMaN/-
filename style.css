@@ -398,3 +398,8 @@ h2 {
        grid-template-columns: 1fr; /* 1 колонка */
    }
 }
+
+*{
+   font-family: "Montserrat", sans-serif;
+   font-weight: bold;
+ }
