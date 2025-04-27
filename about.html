@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про Нас - Квітковий Рай</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+         /* Додаткові стилі спеціально для сторінки "Про нас" */
+         .about-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/about-header-bg.jpg'); /* Зміни шлях до фону! */
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+         .about-header h1 {
+             color: #fff;
+             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+         }
+        .about-content {
+            max-width: 800px; /* Обмеження ширини контенту для читабельності */
+            margin: 0 auto;
+            padding-bottom: 40px;
+         }
+         .about-content img {
+             border-radius: 8px;
+             margin: 20px 0;
+             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+         }
+         .team-section {
+             background-color: #f8f9fa;
+             padding: 60px 0;
+             text-align: center;
+         }
+         .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+         }
+         .team-member img {
+             width: 150px;
+             height: 150px;
+             border-radius: 50%;
+             object-fit: cover;
+             margin: 0 auto 15px auto;
+             border: 3px solid #fff;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+         }
+         .team-member h4 {
+             margin-bottom: 5px;
+         }
+         .team-member p {
+             font-style: italic;
+             color: #555;
+         }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Квітковий Рай</a>
+            <nav class="navigation">
+                 <ul>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="index.html#delivery">Доставка</a></li>
+                    <li><a href="index.html#contacts">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-button">🔍</button>
+
+                <a href="kohsick.html" class="cart-button" title="Перейти до кошика">
+                    🛒
+                    <span class="cart-count">0</span> </a>
+                </div>
+             <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+    <main>
+        <section class="about-header">
+             <div class="container">
+                 <h1>Про Нас - "Квітковий Рай"</h1>
+                 <p>Даруємо радість та красу через квіти</p>
+            </div>
+        </section>
+
+        <section class="about-content section">
+            <div class="container">
+                <h2>Наша Історія</h2>
+                <p>
+                    "Квітковий Рай" розпочав свою роботу в Рівному у 2020 році з великої любові до квітів та бажання
+                    ділитися цією красою з іншими. Ми починали як маленький магазинчик, а сьогодні - це
+                    онлайн-платформа з власною службою доставки та командою талановитих флористів.
+                </p>
+                <img src="images/interermagaziny.jpg.webp" alt="Інтер'єр магазину Квітковий Рай" > <h2>Наша Місія</h2>
+                <p>
+                    Ми прагнемо не просто продавати квіти, а створювати емоції. Наша місія – допомогти вам
+                    висловити свої почуття, привітати близьких, зробити будь-який день особливим за допомогою
+                    свіжих, красивих та стильних букетів. Ми віримо, що квіти – це універсальна мова любові,
+                    поваги та турботи.
+                </p>
+                <h2>Наші Цінності</h2>
+                <ul>
+                    <li><strong>Свіжість:</strong> Ми гарантуємо свіжість кожної квітки у вашому букеті.</li>
+                    <li><strong>Креативність:</strong> Наші флористи створюють унікальні та сучасні композиції.</li>
+                    <li><strong>Сервіс:</strong> Клієнт – наш головний пріоритет. Швидка доставка та увага до деталей.</li>
+                    <li><strong>Любов до справи:</strong> Ми обожнюємо квіти і вкладаємо душу в кожен букет.</li>
+                </ul>
+            </div>
+        </section>
+
+         <section class="team-section section">
+            <div class="container">
+                <h2>Наша Команда</h2>
+                <p>Люди, які створили цей шедевр:</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/KOVA.jpg" alt="Фото овнера Максима"> <h4>Максим Ковальчук</h4>
+                        <p>Product Owner</p>
+                    </div>
+                     <div class="team-member">
+                        <img src="images/GLEB.jpg" alt="Фото скрум мастера Гліба"> <h4>Гліб Буткевич</h4>
+                        <p>Scrum Master</p>
+                    </div>
+                     <div class="team-member">
+                        <img src="images/DMISH.jpg" alt="Фото бекенд розробника Владислава"> <h4>Владислав Дмиш</h4>
+                        <p>Back end Developer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/YURIIIII.jpg" alt="Фото фронтенд розробника Юрія"> <h4>Юрій Охмак</h4>
+                        <p>Front end Developer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/VLOS.jpg" alt="Фото дизайнера Власа"> <h4>Влас Мартинюк</h4>
+                        <p>UI/UX Designer</p>
+                </div>
+                    <div class="team-member">
+                        <img src="images/VALUE.jpg" alt="Фото менеджера Анни"> <h4>Валентин Мазур</h4>
+                        <p>Tester</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/ANTON.jpg" alt="Фото менеджера Анни"> <h4>Антон Білецький</h4>
+                        <p>Tester</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacts-footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-column">
+                    <h4>Квітковий Рай</h4>
+                    <p>Доставка квітів та подарунків у Рівному.</p>
+                    <p>&copy; 2025 Квітковий Рай. Всі права захищено.</p>
+                </div>
+                 <div class="footer-column">
+                    <h4>Навігація</h4>
+                     <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Доставка та оплата</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Контакти</h4>
+                    <p>Телефон: <a href="tel:+380991234567">+38 (099) 123-45-67</a></p>
+                    <p>Email: <a href="mailto:info@kvity-rai.rv.ua">info@kvity-rai.rv.ua</a></p>
+                    <p>Адреса: м. Рівне, вул. Квіткова, 1</p>
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш Кошик - Квітковий Рай</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png"> <style>
+        /* Додаткові стилі для сторінки кошика (краще винести в style.css) */
+        .cart-page {
+            padding: 40px 0 60px 0; /* Відступи зверху/знизу */
+        }
+        .cart-page h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .cart-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Основна частина кошика | Підсумок */
+            gap: 40px;
+        }
+
+        .cart-items table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .cart-items th, .cart-items td {
+            border-bottom: 1px solid #eee;
+            padding: 15px 10px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .cart-items th {
+            background-color: #f8f9fa;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        .cart-items img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        .cart-item-details {
+            display: flex;
+            align-items: center;
+        }
+        .cart-item-details h4 {
+            margin: 0;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif; /* Звичайний шрифт для назви */
+        }
+
+        .quantity-controls input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            padding: 5px;
+        }
+        /* Стилізація кнопок +/- (можна зробити їх кращими) */
+        .quantity-controls button {
+            background: #eee;
+            border: none;
+            padding: 5px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .remove-item-button {
+            background: none;
+            border: none;
+            color: #e74c3c; /* Червоний */
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .remove-item-button:hover {
+            color: #c0392b;
+        }
+
+        .cart-summary {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            height: fit-content; /* Щоб блок не розтягувався на всю висоту */
+        }
+        .cart-summary h2 {
+            text-align: left;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .cart-actions {
+            margin-top: 30px;
+        }
+        .cart-actions .cta-button { /* Використовуємо існуючий клас кнопки */
+            display: block; /* Кнопки на всю ширину */
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px 20px; /* Зробимо кнопки більшими */
+        }
+         .cart-actions .cta-button.secondary {
+             background-color: #fff; /* Білий фон для другорядної */
+             color: #e84393;
+             border: 2px solid #e84393;
+         }
+         .cart-actions .cta-button.secondary:hover {
+             background-color: #f1f1f1;
+             color: #d83383;
+         }
+
+         .empty-cart-message {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            display: none; /* За замовчуванням ховаємо */
+         }
+         .empty-cart-message.visible {
+            display: block; /* Показуємо, якщо кошик порожній */
+         }
+          .empty-cart-message p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+          }
+           .empty-cart-message a {
+            color: #e84393;
+            font-weight: bold;
+            text-decoration: underline;
+           }
+
+
+        /* Адаптивність для кошика */
+        @media (max-width: 992px) {
+            .cart-container {
+                grid-template-columns: 1fr; /* Все в одну колонку на планшетах/мобілках */
+            }
+             .cart-summary {
+                margin-top: 30px;
+            }
+        }
+         @media (max-width: 768px) {
+             /* Можна приховати деякі колонки таблиці або змінити її вигляд для мобілок */
+             .cart-items .hide-mobile {
+                 display: none;
+             }
+             .cart-item-details img {
+                 max-width: 60px;
+                 margin-right: 10px;
+             }
+             .cart-item-details h4 {
+                 font-size: 0.9rem;
+             }
+         }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Квітковий Рай</a>
+            <nav class="navigation">
+                 <ul>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="index.html#delivery">Доставка</a></li>
+                    <li><a href="index.html#contacts">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-button">🔍</button>
+                <a href="cart.html" class="cart-button">🛒 <span class="cart-count">0</span></a>
+            </div>
+             <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+    <main class="cart-page">
+        <div class="container">
+            <h1>Ваш кошик</h1>
+
+            <div class="empty-cart-message" id="empty-cart-msg">
+                <p>На жаль, ваш кошик порожній.</p>
+                <a href="catalog.html">Перейти до каталогу</a>
+            </div>
+
+
+            <div class="cart-container" id="cart-content"> <div class="cart-items">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Товар</th>
+                                <th>Ціна</th>
+                                <th>Кількість</th>
+                                <th class="hide-mobile">Сума</th> <th></th> </tr>
+                        </thead>
+                        <tbody id="cart-table-body">
+                            <tr>
+                                <td>
+                                    <div class="cart-item-details">
+                                        <img src="images/bouquet1.jpg" alt="Букет Ніжність">
+                                    </div>
+                                </td>
+                                 <td><h4>Букет "Ніжність"</h4></td>
+                                <td>1200 грн</td>
+                                <td>
+                                    <div class="quantity-controls">
+                                        <button class="quantity-decrease">-</button>
+                                        <input type="number" value="1" min="1" max="10">
+                                        <button class="quantity-increase">+</button>
+                                    </div>
+                                </td>
+                                <td class="hide-mobile">1200 грн</td>
+                                <td>
+                                    <button class="remove-item-button" title="Видалити товар">✕</button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>
+                                    <div class="cart-item-details">
+                                        <img src="images/bouquet4.jpg" alt="Квіти в коробці Елегант">
+                                     </div>
+                                </td>
+                                  <td><h4>Квіти в коробці "Елегант"</h4></td>
+                                <td>1500 грн</td>
+                                <td>
+                                     <div class="quantity-controls">
+                                        <button class="quantity-decrease">-</button>
+                                        <input type="number" value="1" min="1" max="10">
+                                        <button class="quantity-increase">+</button>
+                                    </div>
+                                </td>
+                                <td class="hide-mobile">1500 грн</td>
+                                <td>
+                                    <button class="remove-item-button" title="Видалити товар">✕</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Підсумок</h2>
+                    <div class="summary-row">
+                        <span>Товари:</span>
+                        <span id="summary-subtotal">2700 грн</span> </div>
+                    <div class="summary-row">
+                        <span>Доставка:</span>
+                        <span>За тарифами</span> </div>
+                    <div class="summary-row total">
+                        <span>Разом:</span>
+                        <span id="summary-total">2700 грн</span> </div>
+
+                    <div class="cart-actions">
+                        <a href="checkout.html" class="cta-button">Оформити замовлення</a>
+                        <a href="catalog.html" class="cta-button secondary">Продовжити покупки</a>
+                    </div>
+                </div>
+
+            </div> </div>
+    </main>
+
+    <footer id="contacts-footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-column">
+                    <h4>Квітковий Рай</h4>
+                    <p>Доставка квітів та подарунків у Рівному.</p>
+                    <p>&copy; 2025 Квітковий Рай. Всі права захищено.</p>
+                </div>
+                 <div class="footer-column">
+                    <h4>Навігація</h4>
+                     <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Доставка та оплата</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Контакти</h4>
+                    <p>Телефон: <a href="tel:+380991234567">+38 (099) 123-45-67</a></p>
+                    <p>Email: <a href="mailto:info@kvity-rai.rv.ua">info@kvity-rai.rv.ua</a></p>
+                    <p>Адреса: м. Рівне, вул. Квіткова, 1</p>
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <script src="cartLogic.js" defer></script> </body>
+</html>

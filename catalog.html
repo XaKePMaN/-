@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог Квітів - Квітковий Рай</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .catalog-header {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .catalog-header h1 {
+             margin-bottom: 10px;
+        }
+         .filters-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+         }
+         .pagination {
+            text-align: center;
+            margin-top: 40px;
+         }
+          .pagination a, .pagination span {
+             margin: 0 5px;
+             padding: 8px 15px;
+             border: 1px solid #ddd;
+             color: #e84393;
+             border-radius: 4px;
+             text-decoration: none;
+             transition: background-color 0.3s, color 0.3s;
+         }
+         .pagination a:hover, .pagination span.current {
+             background-color: #e84393;
+             color: white;
+             border-color: #e84393;
+         }
+          .pagination span.disabled {
+             color: #ccc;
+             border-color: #eee;
+             cursor: not-allowed;
+         }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Квітковий Рай</a>
+            <nav class="navigation">
+                 <ul>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="index.html#delivery">Доставка</a></li> <li><a href="index.html#contacts">Контакти</a></li> </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-button">🔍</button>
+
+               <a href="kohsick.html" class="cart-button" title="Перейти до кошика">
+                   🛒
+                   <span class="cart-count">0</span> </a>
+               </div>
+            <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+    <main>
+        <section class="catalog-header">
+            <div class="container">
+                <h1>Наш Каталог Квітів</h1>
+                <p>Оберіть ідеальний букет для будь-якої нагоди!</p>
+            </div>
+        </section>
+
+        <section class="catalog-main section">
+            <div class="container">
+
+                <div class="filters-section">
+                    <p><strong>Фільтри:</strong></p>
+                    <label for="sort-by">Сортувати:</label>
+                    <select id="sort-by" name="sort-by">
+                        <option value="popular">За популярністю</option>
+                        <option value="price-asc">Ціна: від низької до високої</option>
+                        <option value="price-desc">Ціна: від високої до низької</option>
+                        <option value="newest">Новинки</option>
+                    </select>
+                    </div>
+
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/nijnist.jpg" alt="Ніжний букет троянд">
+                        <h3>Букет "Ніжність"</h3>
+                        <p class="price">1200 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Vesnyaniy_Nastriy.webp" alt="Яскравий букет тюльпанів">
+                        <h3>Букет "Весняний настрій"</h3>
+                        <p class="price">950 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/nathnenna.webp" alt="Авторський букет">
+                        <h3>Авторський букет "Натхнення"</h3>
+                        <p class="price">1800 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                     <div class="product-card">
+                        <img src="images/kvityVKorobtsi.webp" alt="Композиція в коробці">
+                        <h3>Квіти в коробці "Елегант"</h3>
+                        <p class="price">1500 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/sona4niyDEN.webp" alt="Букет з соняшниками">
+                        <h3>Букет "Сонячний день"</h3>
+                        <p class="price">1100 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                     <div class="product-card">
+                        <img src="images/monobuqetEUSTR.jfif" alt="Монобукет з еустом">
+                        <h3>Букет "Легкість"</h3>
+                        <p class="price">1350 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                     <div class="product-card">
+                        <img src="images/vesilnyBuqet.jfif" alt="Весільний букет">
+                        <h3>Весільний букет "Мрія"</h3>
+                        <p class="price">2500 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                     <div class="product-card">
+                        <img src="images/MUJITSKIBUQET.jpg" alt="Чоловічий букет">
+                        <h3>Букет "Стильний презент"</h3>
+                        <p class="price">1600 грн</p>
+                        <button class="add-to-cart-button">В кошик</button>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <span class="disabled">« Назад</span> <span class="current">1</span>      <a href="catalog2.html">2</a> <a href="catalog-page-3.html">3</a> <a href="catalog2.html">Вперед »</a> </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts-footer" class="footer"> <div class="container">
+            <div class="footer-content">
+                 <div class="footer-column">
+                    <h4>Квітковий Рай</h4>
+                    <p>Доставка квітів та подарунків у Рівному.</p>
+                    <p>&copy; 2025 Квітковий Рай. Всі права захищено.</p>
+                </div>
+                 <div class="footer-column">
+                    <h4>Навігація</h4>
+                     <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Доставка та оплата</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Контакти</h4>
+                    <p>Телефон: <a href="tel:+380991234567">+38 (099) 123-45-67</a></p>
+                    <p>Email: <a href="mailto:info@kvity-rai.rv.ua">info@kvity-rai.rv.ua</a></p>
+                    <p>Адреса: м. Рівне, вул. Квіткова, 1</p>
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
