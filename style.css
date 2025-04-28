@@ -85,6 +85,46 @@ h2 {
    color: #e84393;
 }
 
+.header-actions .search-button,
+.header-actions .cart-button {
+    background: none;      /* Твій стиль */
+    border: none;          /* Твій стиль */
+    cursor: pointer;       /* Твій стиль */
+    padding: 5px;          /* Додамо невеликий внутрішній відступ */
+    line-height: 1;        /* Допомагає уникнути зайвої висоти */
+    display: inline-flex;  /* Важливо для внутрішнього вирівнювання (особливо для кошика з лічильником) */
+    align-items: center;   /* Вирівнює картинку (і лічильник) всередині кнопки/посилання */
+    position: relative;    /* Твій стиль (залишаємо, може знадобитись для лічильника) */
+}
+
+.header-actions .search-button img,
+.header-actions .cart-button img {
+     display: block;
+}
+
+.header-actions .search-button img {
+   width: 20px;  /* Встанови бажану ширину іконки пошуку */
+   height: 20px; /* Встанови бажану висоту іконки пошуку */
+}
+
+.cart-count {
+    line-height: 1;
+    font-size: 0.9rem;
+    font-weight: bold; /* Зробимо жирним */
+}
+
+.header-actions .cart-button img {
+   width: 24px;  /* Встанови бажану ширину іконки кошика */
+   height: 24px; /* Встанови бажану висоту іконки кошика */
+   margin-right: 5px; /* Відступ між іконкою кошика та лічильником */
+}
+
+.header-actions {
+   display: flex;         /* Робить контейнер flex-контейнером (елементи в ряд) */
+   align-items: center;   /* Вирівнює іконки по вертикалі (по центру) */
+   gap: 15px;             /* Встановлює проміжок між іконками (налаштуй за потребою) */
+}
+
 .header-actions button {
    background: none;
    border: none;
