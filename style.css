@@ -64,11 +64,25 @@ h2 {
    align-items: center;
 }
 
-.logo {
+a.logo {
+   /* === Нові стилі для макету та вирівнювання === */
+   display: inline-flex; /* Робить так, щоб img і span/текст стали в ряд */
+   align-items: center;  /* Вирівнює картинку і текст по вертикальному центру */
+   gap: 10px;             /* Проміжок між картинкою і текстом (налаштуй!) */
+   text-decoration: none; /* Прибирає підкреслення посилання */
+
+   /* === Твої старі стилі для тексту === */
    font-family: 'Playfair Display', serif;
-   font-size: 1.8rem;
+   font-size: 1.8rem;    /* Застосується до тексту */
    font-weight: 700;
-   color: #e84393; /* Рожевий акцент */
+   color: #e84393;       /* Рожевий акцент */
+   line-height: 1;       /* Може покращити вертикальне вирівнювання тексту */
+}
+
+a.logo img {
+   height: 40px;  /* !!! ВАЖЛИВО: Встанови потрібну висоту логотипа (наприклад, 30px, 35px, 40px) */
+   width: auto;   /* Автоматична ширина для збереження пропорцій */
+   display: block; /* Добра практика для тегу img */
 }
 
 .navigation ul {
@@ -86,6 +100,7 @@ h2 {
 }
 
 .header-actions .search-button,
+.header-actions .profile-button,
 .header-actions .cart-button {
     background: none;      /* Твій стиль */
     border: none;          /* Твій стиль */
@@ -98,13 +113,20 @@ h2 {
 }
 
 .header-actions .search-button img,
+.header-actions .profile-button img,
 .header-actions .cart-button img {
      display: block;
+     height: 24px; /* Наприклад, однакова висота */
+     width: auto;
 }
 
 .header-actions .search-button img {
    width: 20px;  /* Встанови бажану ширину іконки пошуку */
    height: 20px; /* Встанови бажану висоту іконки пошуку */
+}
+
+.header-actions .cart-button img {
+   margin-right: 5px; /* Залишаємо відступ для лічильника */
 }
 
 .cart-count {
@@ -145,6 +167,10 @@ h2 {
    font-weight: bold;
 }
 
+.input-error {
+   border-color: #e74c3c !important; 
+   background-color: #fdd !important;
+}
 
 .mobile-menu-toggle {
     display: none; /* Ховаємо на десктопі */
@@ -156,7 +182,9 @@ h2 {
 
 /* Hero Section */
 .hero {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/hero-background.jpg'); /* Заміни шлях! */
+   position: relative; /* Потрібно для позиціонування псевдоелемента */
+   z-index: 1; /* Щоб контент був вище псевдоелемента */
+   background-image: url('images/ed-robertson-UrF1Jf5PamQ-unsplash.jpg'); /* Твій фон */
    background-size: cover;
    background-position: center;
    height: 70vh; /* Висота секції */
@@ -167,7 +195,20 @@ h2 {
    color: #fff;
 }
 
+.hero::before { /* Або .hero::after */
+   content: ""; /* Обов'язково для псевдоелементів */
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.4); /* Напівпрозорий чорний (40% непрозорості). Можна гратися зі значенням 0.4 */
+   z-index: -1;
+}
+
 .hero-content h1 {
+   position: relative;
+   z-index: 2;
    font-size: 3.5rem;
    margin-bottom: 1rem;
    color: #fff;

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід - Квітковий Рай</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="icon" href="images/favicon.png" type="image/png"> <style>
+        /* Стилі для форми (краще винести в style.css) */
+        .login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh; /* Щоб форма була приблизно по центру екрану */
+            padding: 40px 20px;
+        }
+        .login-form-container {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .login-form-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Важливо для padding */
+        }
+        .login-form-container .cta-button { /* Стилізуємо кнопку */
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        .form-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        .form-link a {
+            color: #e84393;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+       </header>
+
+    <main class="login-page">
+        <div class="login-form-container">
+            <h1>Вхід</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email або Логін</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="cta-button">Увійти</button>
+                <p class="form-link">Немає акаунту? <a href="register.html">Зареєструватися</a></p>
+                </form>
+        </div>
+    </main>
+
+    <footer id="contacts-footer" class="footer">
+        </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+        <script src="firebase-init.js"></script>
+    <script src="script.js" defer></script> </body>
+</html>

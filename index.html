@@ -14,7 +14,7 @@
 
     <header class="header">
         <div class="container header-container">
-            <a href="#" class="logo">Квітковий Рай</a>
+            <a href="index.html" class="logo"><img src="images/favicon.png" alt="Логотип Квітковий Рай"> <span>Квітковий Рай</span></a>
             <nav class="navigation">
                 <ul>
                     <li><a href="#catalog">Каталог</a></li>
@@ -32,12 +32,16 @@
                     <img src="images/cart.png" alt="Кошик">
                     <span class="cart-count">0</span>
                 </a>
+
+                <a href="login.html" class="profile-button" title="Перейти в кабінет">
+                    <img src="images/UserProfile.png" alt="User">
+                </a>
             </div>
              <button class="mobile-menu-toggle">☰</button>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" style="background-image: url('images/ed-robertson-UrF1Jf5PamQ-unsplash.jpg'); background-size: cover; background-position: center;">
             <div class="container hero-content">
                 <h1>Свіжі квіти з доставкою для ваших емоцій</h1>
                 <p>Найкращі букети Рівного зі швидкою доставкою та гарантією свіжості.</p>
@@ -53,49 +57,22 @@
                         <img src="images/nijnist.jpg" alt="Ніжний букет троянд">
                         <h3>Букет "Ніжність"</h3>
                         <p class="price">1200 грн</p>
-                        <button class="add-to-cart-button"
-                                data-product-id="hp1"
-                                data-product-name='Букет "Ніжність"'
-                                data-product-price="1200"
-                                data-product-img="images/nijnist.jpg">
-                            В кошик
-                        </button>
                     </div>
                     <div class="product-card">
                         <img src="images/Vesnyaniy_Nastriy.webp" alt="Яскравий букет тюльпанів">
                         <h3>Букет "Весняний настрій"</h3>
                         <p class="price">950 грн</p>
-                         <button class="add-to-cart-button"
-                                 data-product-id="hp2"
-                                 data-product-name='Букет "Весняний настрій"'
-                                 data-product-price="950"
-                                 data-product-img="images/Vesnyaniy_Nastriy.webp">
-                            В кошик
-                        </button>
+                       
                     </div>
                     <div class="product-card">
                         <img src="images/nathnenna.webp" alt="Авторський букет">
                         <h3>Авторський букет "Натхнення"</h3>
                         <p class="price">1800 грн</p>
-                         <button class="add-to-cart-button"
-                                 data-product-id="hp3"
-                                 data-product-name='Авторський букет "Натхнення"'
-                                 data-product-price="1800"
-                                 data-product-img="images/nathnenna.webp">
-                            В кошик
-                        </button>
                     </div>
                      <div class="product-card">
                         <img src="images/kvityVKorobtsi.webp" alt="Композиція в коробці">
                         <h3>Квіти в коробці "Елегант"</h3>
                         <p class="price">1500 грн</p>
-                         <button class="add-to-cart-button"
-                                 data-product-id="hp4"
-                                 data-product-name='Квіти в коробці "Елегант"'
-                                 data-product-price="1500"
-                                 data-product-img="images/kvityVKorobtsi.webp">
-                            В кошик
-                        </button>
                     </div>
                      </div>
             </div>
@@ -169,6 +146,9 @@
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="firebase-init.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

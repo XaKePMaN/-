@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог Квітів - Квітковий Рай</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        .catalog-header {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .catalog-header h1 {
+             margin-bottom: 10px;
+        }
+         .filters-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+         }
+         .pagination {
+            text-align: center;
+            margin-top: 40px;
+         }
+          .pagination a, .pagination span {
+             margin: 0 5px;
+             padding: 8px 15px;
+             border: 1px solid #ddd;
+             color: #e84393;
+             border-radius: 4px;
+             text-decoration: none;
+             transition: background-color 0.3s, color 0.3s;
+         }
+         .pagination a:hover, .pagination span.current {
+             background-color: #e84393;
+             color: white;
+             border-color: #e84393;
+         }
+          .pagination span.disabled {
+             color: #ccc;
+             border-color: #eee;
+             cursor: not-allowed;
+         }
+
+    </style>
+</head>
+<body data-page="3">
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="images/favicon.png" alt="Логотип Квітковий Рай"> <span>Квітковий Рай</span></a>
+            <nav class="navigation">
+                 <ul>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="index.html#delivery">Доставка</a></li> <li><a href="index.html#contacts">Контакти</a></li> </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-button" title="Пошук по сайту">
+                    <img src="images/search.png" alt="Пошук">
+                </button>
+            
+                <a href="kohsick.html" class="cart-button" title="Перейти до кошика">
+                    <img src="images/cart.png" alt="Кошик">
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="login.html" class="profile-button" title="Перейти в кабінет">
+                    <img src="images/UserProfile.png" alt="User">
+                </a>
+            </div>
+            <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+    <main>
+        <section class="catalog-header">
+            <div class="container">
+                <h1>Наш Каталог Квітів</h1>
+                <p>Оберіть ідеальний букет для будь-якої нагоди!</p>
+            </div>
+        </section>
+
+        <section class="catalog-main section">
+            <div class="container">
+
+                <div class="filters-section">
+                    <p><strong>Фільтри:</strong></p>
+                    <label for="sort-by">Сортувати:</label>
+                    <select id="sort-by" name="sort-by">
+                        <option value="popular">За популярністю</option>
+                        <option value="price-asc">Ціна: від низької до високої</option>
+                        <option value="price-desc">Ціна: від високої до низької</option>
+                        <option value="newest">Новинки</option>
+                    </select>
+                    </div>
+
+                <div class="product-grid"></div>
+                <div class="pagination">
+                  <a href="catalog2.html">« Назад</a>   <a href="catalog.html">1</a>        <a href="catalog2.html">2</a>        <span class="current">3</span>  <span class="disabled">« Вперед</span> </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts-footer" class="footer"> <div class="container">
+            <div class="footer-content">
+                 <div class="footer-column">
+                    <h4>Квітковий Рай</h4>
+                    <p>Доставка квітів та подарунків у Рівному.</p>
+                    <p>&copy; 2025 Квітковий Рай. Всі права захищено.</p>
+                </div>
+                 <div class="footer-column">
+                    <h4>Навігація</h4>
+                     <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Доставка та оплата</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Контакти</h4>
+                    <p>Телефон: <a href="tel:+380991234567">+38 (099) 123-45-67</a></p>
+                    <p>Email: <a href="mailto:info@kvity-rai.rv.ua">info@kvity-rai.rv.ua</a></p>
+                    <p>Адреса: м. Рівне, вул. Квіткова, 1</p>
+                    </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="script.js" defer></script>
+<script src="catalogFilter.js" defer></script>
+</body>
+</html>

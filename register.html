@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація - Квітковий Рай</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="icon" href="images/favicon.png" type="image/png"> <style>
+        /* Стилі для форми (можна використовувати ті самі, що й для login,
+           або створити окремі/додаткові для .register-page, .register-form-container) */
+        .register-page { /* Аналогічно до .login-page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            padding: 40px 20px;
+        }
+        .register-form-container { /* Аналогічно до .login-form-container */
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .register-form-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .register-form-container .cta-button { /* Стилізуємо кнопку */
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        .form-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        .form-link a {
+            color: #e84393;
+            text-decoration: underline;
+        }
+         /* Стиль для можливих повідомлень про помилки валідації */
+         .error-message {
+             color: #e74c3c;
+             font-size: 0.85rem;
+             margin-top: 5px;
+             display: none; /* Ховаємо за замовчуванням */
+         }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="images/favicon.png" alt="Логотип Квітковий Рай"> <span>Квітковий Рай</span></a>
+            <nav class="navigation">
+                 <ul>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="index.html#delivery">Доставка</a></li>
+                    <li><a href="index.html#contacts">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-button" title="Пошук по сайту">
+                    <img src="images/search.png" alt="Пошук">
+                </button>
+                 <a href="login.html" class="profile-button" title="Перейти в кабінет"> <img src="images/UserProfile.png" alt="User">
+                </a>
+                <a href="kohsick.html" class="cart-button" title="Перейти до кошика">
+                    <img src="images/cart.png" alt="Кошик">
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+             <button class="mobile-menu-toggle">☰</button> </div>
+    </header>
+
+    <main class="register-page">
+        <div class="register-form-container">
+            <h1>Реєстрація</h1>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="name">Ваше Ім'я</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message" id="name-error"></span> </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                     <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Номер телефону</label>
+                  <input type="text" id="phone" name="phone">
+                   <span class="error-message" id="phone-error"></span>
+              </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required minlength="6"> <span class="error-message" id="password-error"></span>
+                </div>
+                 <div class="form-group">
+                    <label for="confirm-password">Підтвердіть Пароль</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required>
+                     <span class="error-message" id="confirm-password-error"></span>
+                </div>
+                <button type="submit" class="cta-button">Зареєструватися</button>
+                <p class="form-link">Вже є акаунт? <a href="login.html">Увійти</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer id="contacts-footer" class="footer">
+        <div class="container">
+             <div class="footer-content">
+                  <div class="footer-column">
+                     <h4>Квітковий Рай</h4>
+                     <p>Доставка квітів та подарунків у Рівному.</p>
+                     <p>&copy; 2025 Квітковий Рай. Всі права захищено.</p>
+                 </div>
+                  <div class="footer-column">
+                     <h4>Навігація</h4>
+                      <ul>
+                         <li><a href="index.html">Головна</a></li>
+                         <li><a href="catalog.html">Каталог</a></li>
+                         <li><a href="#">Доставка та оплата</a></li>
+                         <li><a href="about.html">Про нас</a></li>
+                         <li><a href="#">Контакти</a></li>
+                     </ul>
+                 </div>
+                  <div class="footer-column">
+                     <h4>Контакти</h4>
+                     <p>Телефон: <a href="tel:+380991234567">+38 (099) 123-45-67</a></p>
+                     <p>Email: <a href="mailto:info@kvity-rai.rv.ua">info@kvity-rai.rv.ua</a></p>
+                     <p>Адреса: м. Рівне, вул. Квіткова, 1</p>
+                 </div>
+             </div>
+         </div>
+     </footer>
+
+     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+     <script src="firebase-init.js"></script>
+    <script src="script.js" defer></script>
+    <script src="registerValidation.js" defer></script>
+    </body>
+</html>

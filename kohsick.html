@@ -180,7 +180,7 @@
 
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">Квітковий Рай</a>
+            <a href="index.html" class="logo"><img src="images/favicon.png" alt="Логотип Квітковий Рай"> <span>Квітковий Рай</span></a>
             <nav class="navigation">
                  <ul>
                     <li><a href="catalog.html">Каталог</a></li>
@@ -197,6 +197,9 @@
                 <a href="kohsick.html" class="cart-button" title="Перейти до кошика">
                     <img src="images/cart.png" alt="Кошик">
                     <span class="cart-count">0</span>
+                </a>
+                <a href="login.html" class="profile-button" title="Перейти в кабінет">
+                    <img src="images/UserProfile.png" alt="User">
                 </a>
             </div>
     </header>
@@ -312,5 +315,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="firebase-init.js"></script>
     <script src="cartLogic.js" defer></script> </body>
 </html>

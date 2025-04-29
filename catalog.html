@@ -51,11 +51,11 @@
 
     </style>
 </head>
-<body>
+<body data-page="1">
 
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">Квітковий Рай</a>
+            <a href="index.html" class="logo"><img src="images/favicon.png" alt="Логотип Квітковий Рай"> <span>Квітковий Рай</span></a>
             <nav class="navigation">
                  <ul>
                     <li><a href="catalog.html">Каталог</a></li>
@@ -70,6 +70,9 @@
                 <a href="kohsick.html" class="cart-button" title="Перейти до кошика">
                     <img src="images/cart.png" alt="Кошик">
                     <span class="cart-count">0</span>
+                </a>
+                <a href="login.html" class="profile-button" title="Перейти в кабінет">
+                    <img src="images/UserProfile.png" alt="User">
                 </a>
             </div>
             <button class="mobile-menu-toggle">☰</button>
@@ -97,56 +100,7 @@
                     </select>
                     </div>
 
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="images/nijnist.jpg" alt="Ніжний букет троянд">
-                        <h3>Букет "Ніжність"</h3>
-                        <p class="price">1200 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/Vesnyaniy_Nastriy.webp" alt="Яскравий букет тюльпанів">
-                        <h3>Букет "Весняний настрій"</h3>
-                        <p class="price">950 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/nathnenna.webp" alt="Авторський букет">
-                        <h3>Авторський букет "Натхнення"</h3>
-                        <p class="price">1800 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                     <div class="product-card">
-                        <img src="images/kvityVKorobtsi.webp" alt="Композиція в коробці">
-                        <h3>Квіти в коробці "Елегант"</h3>
-                        <p class="price">1500 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/sona4niyDEN.webp" alt="Букет з соняшниками">
-                        <h3>Букет "Сонячний день"</h3>
-                        <p class="price">1100 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                     <div class="product-card">
-                        <img src="images/monobuqetEUSTR.jfif" alt="Монобукет з еустом">
-                        <h3>Букет "Легкість"</h3>
-                        <p class="price">1350 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                     <div class="product-card">
-                        <img src="images/vesilnyBuqet.jfif" alt="Весільний букет">
-                        <h3>Весільний букет "Мрія"</h3>
-                        <p class="price">2500 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                     <div class="product-card">
-                        <img src="images/MUJITSKIBUQET.jpg" alt="Чоловічий букет">
-                        <h3>Букет "Стильний презент"</h3>
-                        <p class="price">1600 грн</p>
-                        <button class="add-to-cart-button">В кошик</button>
-                    </div>
-                </div>
+                <div class="product-grid"></div>
 
                 <div class="pagination">
                     <span class="disabled">« Назад</span> <span class="current">1</span>      <a href="catalog2.html">2</a> <a href="catalog-page-3.html">3</a> <a href="catalog2.html">Вперед »</a> </div>
@@ -181,6 +135,11 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="script.js" defer></script>
+<script src="catalogFilter.js" defer></script>
 </body>
 </html>

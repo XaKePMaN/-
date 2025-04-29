@@ -165,36 +165,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
    // --- ОБРОБНИКИ ПОДІЙ (Використовуємо Делегування) ---
    if (cartTableBody) {
-       cartTableBody.addEventListener('click', (event) => {
-           const target = event.target; // Елемент, по якому клікнули
-           const productId = target.dataset.productId; // ID товару з data-атрибута
+    cartTableBody.addEventListener('click', (event) => {
+        const target = event.target;
+        const productId = target.dataset.productId;
 
-           if (!productId) return; // Виходимо, якщо клік не по кнопці з ID
+        if (!productId) return; // Виходимо, якщо клік не по кнопці з ID
 
-           if (target.classList.contains('quantity-increase')) {
-               changeQuantity(productId, 1); // Збільшити на 1
-           } else if (target.classList.contains('quantity-decrease')) {
-               changeQuantity(productId, -1); // Зменшити на 1
-           } else if (target.classList.contains('remove-item-button')) {
-               // Підтвердження видалення (опціонально)
-               if (confirm(`Ви дійсно хочете видалити "${target.closest('tr').querySelector('h4').textContent}" з кошика?`)) {
-                    removeItemFromCart(productId);
-               }
-           }
-       });
+        if (target.classList.contains('quantity-increase')) {
+            changeQuantity(productId, 1);
+        } else if (target.classList.contains('quantity-decrease')) {
+            changeQuantity(productId, -1);
+        } else if (target.classList.contains('remove-item-button')) {
+            // Просто викликаємо функцію видалення одразу
+            removeItemFromCart(productId);
+        }
+    });
 
-        // Обробник для зміни значення в полі input кількості
-        cartTableBody.addEventListener('change', (event) => {
-            const target = event.target;
-            if (target.classList.contains('quantity-input')) {
-                const productId = target.dataset.productId;
-                const newQuantity = target.value;
-                if (productId) {
-                    updateQuantityFromInput(productId, newQuantity);
-                }
-            }
-        });
-   }
+     // Обробник для зміни значення в полі input кількості
+     cartTableBody.addEventListener('change', (event) => {
+         const target = event.target;
+         if (target.classList.contains('quantity-input')) {
+             const productId = target.dataset.productId;
+             const newQuantity = target.value;
+             if (productId) {
+                 updateQuantityFromInput(productId, newQuantity);
+             }
+         }
+     });
+}
 
 
    // --- ІНІЦІАЛІЗАЦІЯ СТОРІНКИ КОШИКА ---
