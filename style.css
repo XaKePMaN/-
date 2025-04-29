@@ -180,6 +180,17 @@ a.logo img {
     cursor: pointer;
 }
 
+.input-error {
+   border-color: #e74c3c !important;
+   background-color: #fdd !important;
+}
+.error-message {
+   color: #e74c3c;
+   font-size: 0.85rem;
+   margin-top: 5px;
+   display: none;
+}
+
 /* Hero Section */
 .hero {
    position: relative; /* Потрібно для позиціонування псевдоелемента */

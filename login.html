@@ -69,6 +69,7 @@
         <div class="login-form-container">
             <h1>Вхід</h1>
             <form id="login-form">
+                <div id="login-error" class="error-message" style="text-align: center; margin-bottom: 15px;"></div>
                 <div class="form-group">
                     <label for="email">Email або Логін</label>
                     <input type="text" id="email" name="email" required>
@@ -90,4 +91,5 @@
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
         <script src="firebase-init.js"></script>
     <script src="script.js" defer></script> </body>
+    <script src="loginLogic.js" defer></script>
 </html>
